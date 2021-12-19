@@ -1,0 +1,23 @@
+package chapter0_general;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ThreadExecutors {
+
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	public static startExecutor() {
+		ExecutorService service = Executors.newSingleThreadExecutor();
+		
+		for(int i = 0 ; i < 5 ; i++) {
+			service.execute(() -> { 
+				System.out.println(Thread.currentThread().getName() + ", execute1");
+			});
+		}
+		
+	}
+}

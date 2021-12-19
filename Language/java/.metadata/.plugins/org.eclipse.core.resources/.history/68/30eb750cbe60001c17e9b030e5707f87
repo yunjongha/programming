@@ -1,0 +1,12 @@
+package chapter0_general;
+
+public class TryResource {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	public static void copy(String src, String des) {
+		
+	}
+}
