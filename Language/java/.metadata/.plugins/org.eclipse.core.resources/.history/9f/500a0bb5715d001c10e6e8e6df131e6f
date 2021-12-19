@@ -1,0 +1,16 @@
+package chapter2_stream;
+
+import java.util.stream.Stream;
+
+public class FilterMap {
+
+	public static void main(String[] args) {
+		Stream<String> lowCaseWords = Stream.of("THIS", "IS", "LIFE").map(String::toLowerCase);
+		
+		lowCaseWords.forEach(System.out::println);
+
+		Stream<Character> firstChars = Stream.of("THIS", "IS", "LIFE").map( x -> x.charAt(0));
+
+		firstChars.forEach(System.out::println);
+	}
+}

@@ -1,0 +1,8 @@
+package chapter1_lamda;
+
+public class ConstructorRef {
+
+	public static void main(String[] args) {
+		
+	}
+}

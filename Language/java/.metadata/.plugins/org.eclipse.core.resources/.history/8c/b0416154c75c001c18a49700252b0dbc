@@ -1,0 +1,11 @@
+package chapter1_lamda;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DefaultMethod {
+
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<>() { "jongha", "is", "good", "I" };
+	}
+}

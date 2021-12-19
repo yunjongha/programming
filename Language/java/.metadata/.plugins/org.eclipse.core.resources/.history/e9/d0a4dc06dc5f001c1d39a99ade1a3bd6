@@ -1,0 +1,18 @@
+package chapter2_stream;
+
+public class Reduction {
+
+	private static final String[] words = new String[] {"chanbin", "dohyeon", "jongha", "chamnu", 
+			"joo", "jis", "good", "jood", "good"}; 
+
+	private static final String[] nums = new String[] {"chanbin", "dohyeon", "jongha", "chamnu", 
+			"joo", "jis", "good", "jood", "good"}; 
+
+	public static void main(String[] args) {
+		
+	}
+	
+	public static void reduce() {
+		
+	}
+}

@@ -1,0 +1,20 @@
+package chapter1_lamda;
+
+import java.util.Arrays;
+
+class MethodRef {
+
+	public static void main(String[] args) {
+		String[] strings = new String[] { "jongha", "is", "good", "!" };
+		
+		Arrays.sort(strings, String::compareToIgnoreCase);
+		
+		System.out.println("strings: " + Arrays.asList(strings));
+	}
+}
+
+class Greeter {
+	public void greet() {
+		
+	}
+}

@@ -1,0 +1,5 @@
+package chapter2_stream;
+
+public class CollectorStream {
+
+}

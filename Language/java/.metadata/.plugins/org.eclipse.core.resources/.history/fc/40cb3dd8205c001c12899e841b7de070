@@ -1,0 +1,13 @@
+package chapter1_lamda;
+
+/**
+ * 
+ * @author yunjo
+ *
+ */
+public class ConstructorRef {
+
+	public static void main(String[] args) {
+		
+	}
+}

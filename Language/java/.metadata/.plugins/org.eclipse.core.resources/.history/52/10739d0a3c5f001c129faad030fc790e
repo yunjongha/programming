@@ -1,0 +1,43 @@
+package chapter0_general;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GenericTest {
+
+	public static void main(String[] args) {
+		List<? super A> listStr = new ArrayList<>();
+		listStr.add(new A("A"));
+		listStr.add(new B("B"));
+		listStr.add(new C("C"));
+	}
+}
+
+class A {
+
+	protected final String data;
+	
+	public A(String data) {
+		this.data = data;
+	}
+	
+	@Override
+	public String toString() {
+		return data;
+	}
+}
+
+class B extends A {
+
+	public B(String data) {
+		super(data);
+	}
+}
+
+class C extends B {
+	
+	public C(String data) {
+		super(data);
+	}
+}
+

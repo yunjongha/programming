@@ -1,0 +1,11 @@
+package chapter2_stream;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class ToStream {
+
+	public static void main(String[] args) {
+		String contents = new String(Files.readAllBytes(Paths.get("c:\temp\jongha.txt")))
+	}
+}

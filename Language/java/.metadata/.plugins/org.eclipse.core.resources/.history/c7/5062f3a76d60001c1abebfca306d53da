@@ -1,0 +1,23 @@
+package chapter2_stream;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class CollectorStream {
+
+	private static final String[] words = new String[] {"chanbin", "dohyeon", "jongha", "chamnu", 
+			"joo", "jis", "good", "jood", "good"}; 
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	public static void toList() {
+		List<String> list = Stream.of(words).collect(Collectors.toList());
+		
+		list.forEach(System.out::println);
+	}
+}
+
+

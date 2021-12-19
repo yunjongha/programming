@@ -1,0 +1,12 @@
+package chapter2_stream;
+
+public class Reduction {
+
+	public static void main(String[] args) {
+		
+	}
+	
+	public static void reduce() {
+		
+	}
+}

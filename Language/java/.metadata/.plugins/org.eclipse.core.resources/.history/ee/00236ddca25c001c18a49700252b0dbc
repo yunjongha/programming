@@ -1,0 +1,71 @@
+package chapter1_lamda;
+
+import java.lang.Thread.State;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
+public class VarScope {
+
+	private static int staticInt = 10;
+	
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	
+		repeatMessage("jongha!!", 10);
+	}
+	
+	/**
+	 * 
+	 * @param text
+	 * @param count
+	 */
+	public static void repeatMessage(String text, int count) {
+		Runnable r = () -> {
+			//count--;
+			staticInt--;
+			for (int i = 0 ; i < count; i++) {
+				System.out.println(text);
+				System.out.println("- " + System.currentTimeMillis());
+				Thread.yield();
+				System.out.println("+ " + System.currentTimeMillis());
+			}
+		};
+		
+		new Thread(r).start();
+	}
+	
+	/**
+	 * 
+	 * @param text
+	 * @param count
+	 */
+	public static void repeatByAnnon(String text, int count) {
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				//count--;
+				//staticInt--;
+				for (int i = 0 ; i < count; i++) {
+					System.out.println(text);
+					System.out.println("- " + System.currentTimeMillis());
+					Thread.yield();
+					System.out.println("+ " + System.currentTimeMillis());
+				}
+			}
+		}).start();
+	}
+	
+	public static void referObj(List<Path> files) {
+	
+		List<Path> matches = new ArrayList<>();
+		for (Path p : files) {
+			new Thread(() -> { if (p.endsWith("jongha") matches.add(p); })).start();
+		}
+	}
+}

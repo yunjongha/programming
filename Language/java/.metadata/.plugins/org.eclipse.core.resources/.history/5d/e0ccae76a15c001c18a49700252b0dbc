@@ -1,0 +1,32 @@
+package chapter1_lamda;
+
+public class VarScope {
+
+	/**
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	
+		repeatMessage("jongha!!", 10);
+	}
+	
+	/**
+	 * 
+	 * @param text
+	 * @param count
+	 */
+	public static void repeatMessage(String text, int count) {
+		Runnable r = () -> {
+			count--;
+			for (int i = 0 ; i < count; i++) {
+				System.out.println(text);
+				System.out.println("- " + System.currentTimeMillis());
+				Thread.yield();
+				System.out.println("+ " + System.currentTimeMillis());
+			}
+		};
+		
+		new Thread(r).start();
+	}
+}

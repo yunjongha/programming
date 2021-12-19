@@ -1,0 +1,23 @@
+package chapter1_lamda;
+
+import java.awt.Button;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+
+/**
+ * 
+ * @author yunjo
+ *
+ */
+public class ConstructorRef {
+
+	public static void main(String[] args) {
+	
+		//List<String> labels = new String[] { "jongha", "is", "good", "!" };
+		String[] lables = new String[] { "jongha", "is", "good", "!" };
+		Stream<Button> stream = lables.stream().map(Button::new);
+		List<Button> buttons = stream.collect(Collectors.toList());
+	}
+}

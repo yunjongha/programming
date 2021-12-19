@@ -1,0 +1,7 @@
+package chapter1_lamda;
+
+@FunctionalInterface
+public interface Lamda4Exception {
+
+	public void canThrowExeption() throws InterruptedException;
+}

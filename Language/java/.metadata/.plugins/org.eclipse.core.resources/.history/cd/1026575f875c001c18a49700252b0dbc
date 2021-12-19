@@ -1,0 +1,5 @@
+package chapter1_lamda;
+
+public class VarScope {
+
+}

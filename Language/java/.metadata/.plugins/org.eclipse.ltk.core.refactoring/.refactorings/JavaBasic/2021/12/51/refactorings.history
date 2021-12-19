@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;chapter2_stream.filterMap.java&apos; to &apos;FilterMap.java&apos;&#x0D;&#x0A;- Original project: &apos;JavaBasic&apos;&#x0D;&#x0A;- Original element: &apos;chapter2_stream.filterMap.java&apos;&#x0D;&#x0A;- Renamed element: &apos;chapter2_stream.FilterMap.java&apos;" description="Rename compilation unit &apos;filterMap.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;chapter2_stream{filterMap.java" name="FilterMap.java" references="false" stamp="1639548530542" version="1.0"/>
+</session>
