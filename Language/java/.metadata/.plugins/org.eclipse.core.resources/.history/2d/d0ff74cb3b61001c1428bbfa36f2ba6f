@@ -1,0 +1,21 @@
+package chapter0_general;
+
+import java.util.Objects;
+
+public class HashcodeDefinition {
+
+	private int age;
+	private short height;
+	private String name;
+	
+	private int hashCode;
+	
+	
+	public boolean equals(Object obj) {
+		if(this == obj) return true;
+		if(!(obj instanceof HashcodeDefinition)) return false;
+		
+		HashcodeDefinition objDef = (HashcodeDefinition)obj;
+		return age == objDef.age && height == objDef.height && Objects.equals(name, objDef.name);
+	}
+}

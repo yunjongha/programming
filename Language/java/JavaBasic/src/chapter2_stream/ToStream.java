@@ -15,7 +15,7 @@ public class ToStream {
 		closeAuto();
 		
 		String contents = new String(Files.readAllBytes(Paths.get("c:\\temp\\jongha.txt")), StandardCharsets.UTF_8);
-		List<String> words = Arrays.asList(contents.split("[\s|\t]+"));
+		List<String> words = Arrays.asList(contents.split("[\\s|\\t]+"));
 		
 		/*
 		int count = 0;
@@ -43,8 +43,8 @@ public class ToStream {
 	 */
 	public static void arrayStream() throws IOException {
 		String contents = new String(Files.readAllBytes(Paths.get("c:\\temp\\jongha.txt")), StandardCharsets.UTF_8);
-		Stream<String> stream = Stream.of(contents.split("[\s|\t]+"));
-		List<String> words = Arrays.asList(contents.split("[\s|\t]+"));
+		Stream<String> stream = Stream.of(contents.split("[\\s|\\t]+"));
+		List<String> words = Arrays.asList(contents.split("[\\s|\\t]+"));
 		
 		/*
 		int count = 0;

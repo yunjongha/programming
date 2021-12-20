@@ -1,0 +1,15 @@
+package chapter0_general;
+
+public class EqualsDefinition {
+	
+	private String name;
+	private int age;
+
+	public static void main(String[] args) {
+		String data = "jongha";
+		String data1 = "jongha";
+		
+		System.out.println("equal? : " + (data == data1));
+		System.out.println("equal? : " + (data.equals(data1)));
+	}
+}

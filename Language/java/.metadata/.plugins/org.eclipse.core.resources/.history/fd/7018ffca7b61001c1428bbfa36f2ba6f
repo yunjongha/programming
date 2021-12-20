@@ -1,0 +1,32 @@
+package turing;
+
+import java.util.Stack;
+
+public class Baseball {
+
+	public static void main(String[] args) {
+		String[] ops = new String[] { "5", "2", "C", "D", "+" };
+		
+		Stack<Integer> stack = new Stack<>();
+		
+		for(String item : ops) {
+			if (item != null && !item.isEmpty()) {
+				if(item.equals("C")) {
+					try {
+						stack.pop();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				} else if (item.equals("D")) {
+					try {
+						Integer prevScore = stack.pop();
+						stack.push(prevScore * 2);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+
+				}
+			}
+		}
+	}
+}

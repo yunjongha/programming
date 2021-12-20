@@ -1,6 +1,8 @@
 package chapter2_stream;
 
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -10,26 +12,27 @@ public class CollectorStream {
 			"joo", "jis", "good", "jood", "good"}; 
 	
 	public static void main(String[] args) {
-		//toList();
-		iterate();
+		toList();
+		System.out.println("-----");
+		toSet();
 	}
 	
 	public static void toList() {
 		List<String> list = Stream.of(words).collect(Collectors.toList());
 		
 		list.forEach(System.out::println);
-		
-		for(String anItem : list) {
-			System.out.println("list item: " + anItem);
-		}
 	}
 	
-	public static void iterate() {
-		List<String> list = Stream.of(words).collect(Collectors.toList());
+	public static void toSet() {
+		Set<String> set = Stream.of(words).collect(Collectors.toSet());
 		
-		for(String anItem : list) {
-			System.out.println("stream item: " + anItem);
-		}
+		set.forEach(System.out::println);
+	}
+
+	public static void toTreeSet() {
+		Set<String> set = Stream.of(words).collect(Collectors.toCollection(TreeSet::new));
+		
+		set.forEach(System.out::println);
 	}
 }
 

@@ -1,0 +1,38 @@
+package chapter0_general;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class NoNullReturn {
+
+	private static final List<Cheese> cheeses = Arrays.asList( new Cheese[] { new Cheese("ch1"), new Cheese("ch2") } );
+
+	public static void main(String[] args) {
+		Cheese[] chs = toCheese();
+
+	}
+	
+	public static List<Cheese> getCheese() {
+		return cheeses.isEmpty() ? Collections.emptyList() : new ArrayList<>(cheeses);
+	}
+	
+	public static Cheese[] toCheese() {
+		return (Cheese[])cheeses.toArray();
+	}
+};
+
+final class Cheese {
+
+	private final String name;
+	
+	public Cheese(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
+};

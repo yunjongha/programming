@@ -1,6 +1,5 @@
 package chapter1_lamda;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -52,8 +51,8 @@ class ThePerson implements Person, NamedPerson {
 interface Person {
 	long getId();
 	
-	//default String getName() { return "Jongha Yun"; }
-	String getName();
+	default String getName() { return "Jongha Yun"; }
+	//String getName();
 }
 
 interface NamedPerson {

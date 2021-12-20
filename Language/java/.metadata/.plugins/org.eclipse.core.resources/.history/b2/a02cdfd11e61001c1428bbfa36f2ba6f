@@ -1,0 +1,20 @@
+package chapter0_general;
+
+import java.util.List;
+
+public class NoNullReturn {
+
+	private static final List<Cheese> cheeses = new ArrayLi
+	public static void main(String[] args) {
+		
+	}
+	
+	
+	public static List<Cheese> getCheese() {
+		
+	}
+}
+
+final class Cheese {
+	
+}
