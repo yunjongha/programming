@@ -1,6 +1,7 @@
 package turing;
 
 import java.util.Iterator;
+import java.util.Optional;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -10,9 +11,9 @@ public class Baseball {
 		
 		Scanner in = new Scanner(System.in);
 		
-		String[] ops = in.nextLine().split(" ");
+		//String[] ops = in.nextLine().split(" ");
 		
-		//String[] ops = new String[] { "5", "2", "C", "D", "+" };
+		String[] ops = new String[] { "5", "2", "C", "D", "+" };
 		
 		Stack<Integer> stack = new Stack<>();
 
@@ -57,8 +58,10 @@ public class Baseball {
 		for(Iterator<Integer> i = stack.iterator() ; i.hasNext() ; ) {
 			result += i.next();
 		}
+		
+		Optional<Integer> reduced = stack.stream().reduce((x, y) -> x + y);
 	
-		System.out.println("result: " + result);
+		System.out.printf("result: %s, reduced: %s", result, reduced.get());
 		
 	}
 }

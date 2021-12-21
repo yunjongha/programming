@@ -1,0 +1,11 @@
+package chapter2_stream;
+
+public class CollectorMap {
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	
+
+}
