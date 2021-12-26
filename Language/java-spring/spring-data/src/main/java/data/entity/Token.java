@@ -1,7 +1,4 @@
-package data.token;
-
-import java.util.ArrayList;
-import java.util.List;
+package data.entity;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

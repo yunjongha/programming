@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import data.token.Token;
+import data.entity.Token;
 
 /**
  * 

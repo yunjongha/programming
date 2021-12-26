@@ -1,6 +1,6 @@
 package data.db;
 
-import data.token.Token;
+import data.entity.Token;
 
 /**
  * 
