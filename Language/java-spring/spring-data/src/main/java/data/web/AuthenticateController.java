@@ -26,25 +26,38 @@ public class AuthenticateController {
 	private MemoryRepository memRepo;
 	
 	@GetMapping("/login")
+	//@HystrixCommand(fallbackMethod = "loginError")
 	public void login(HttpServletRequest request, HttpServletResponse response) {
 	
 		Cookie[] cookies = request.getCookies();
+		if(cookies == null) {
+			System.out.println("GET /login, no cookies");
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			return;
+		}
+
 		Optional<Cookie> reqCookie = Stream.of(cookies).filter(x -> x.getName().equals("reqId")).findAny();
 		if(reqCookie.isPresent() == false) {
-			System.out.println("GET /login, can't find reqId");
-			
+			System.out.println("GET /login, no reqId cookies");
 			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return;
 		}		
 		
-		AuthRequest authReq = memRepo.<AuthRequest>get(reqCookie.get().getName(), AuthRequest.class);
+		AuthRequest authReq = memRepo.<AuthRequest>get(reqCookie.get().getValue(), AuthRequest.class);
 
 		System.out.println("GET /login, found the corresponding auth request: " + authReq);
 		try {
 			response.sendRedirect("http://localhost:3001/login");
 		} catch (IOException e) {
 			e.printStackTrace();
+			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+			return;
 		}
+	}
+	
+	private void loginError(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("GET /login, login error occurred");
+		response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 	}
 	
 }

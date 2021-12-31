@@ -5,6 +5,14 @@ spring:
         max-active: 10
         max-idle: 10
         min-idle: 2
-    port: 6379
-    host: 127.0.0.1
-    password: 'abcde'
+    port: 18991
+    host: redis-18991.c278.us-east-1-4.ec2.cloud.redislabs.com
+    password: 'first-redis-1234'
+  jms:
+    template:
+      default-destination: mydata.portal.queue
+  artemis:
+    mode: embedded
+    #broker-url: tcp://localhost:61617 
+    user: jongha
+    password: jongha-1234

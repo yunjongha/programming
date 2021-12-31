@@ -3,6 +3,7 @@ package data.web;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.Random;
 import java.util.random.RandomGenerator;
 
@@ -24,7 +25,7 @@ import data.entity.AuthRequest;
 import data.entity.Token;
 import data.mem.MemoryRepository;
 
-@RestController()
+@RestController
 @RequestMapping(path = "/oauth/2.0", produces = "application/json")
 @CrossOrigin("*")
 public class AuthorizeController {
@@ -56,9 +57,8 @@ public class AuthorizeController {
 	}
 
 	private String requestId() {
-		byte[] bytes = new byte[8];
-		new Random().nextBytes(bytes);
-		return new String(bytes);
+		long value = new Random().nextLong();
+		return Long.toHexString(value);
 	}
 
 	/**

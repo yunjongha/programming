@@ -33,6 +33,7 @@ public class MemoryRepository {
 		ValueOperations<String, String> vop = redisTemplate.opsForValue();
 		try {
 			vop.set(key, objMapper.writeValueAsString(value));
+			System.out.printf("redis set, key: %s, value: %s \n", key, objMapper.writeValueAsString(value));
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
@@ -42,6 +43,7 @@ public class MemoryRepository {
 		ValueOperations<String, String> vop = redisTemplate.opsForValue();
 		String value = vop.get(key);
 
+		System.out.printf("redis get, key: %s, value: %s \n", key, value);
 		try {
 			return objMapper.readValue(value, type);
 		} catch (JsonProcessingException e) {

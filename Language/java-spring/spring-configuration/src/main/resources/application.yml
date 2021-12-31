@@ -1,0 +1,11 @@
+server:
+  port: 8070
+spring:
+  jms:
+    template:
+      default-destination: mydata.portal.queue
+  artemis:
+    mode: embedded
+    broker-url: tcp://localhost:61617 
+    user: jongha
+    password: jongha-1234
