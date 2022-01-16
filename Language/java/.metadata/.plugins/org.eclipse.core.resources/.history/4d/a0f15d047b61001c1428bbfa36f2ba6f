@@ -1,8 +1,0 @@
-package turing;
-
-public class Baseball {
-
-	public static void main(String[] args) {
-		String[] ops = new String[] { "5", "2", "C", "D", "+" };
-	}
-}

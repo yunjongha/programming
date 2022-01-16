@@ -1,0 +1,23 @@
+@startuml
+
+object bootstrap_ClassLoader
+note right: <color #red>{JAVA_HOME}/lib/rt.jr</color>의 class들만 로드
+
+object ext_ClassLoader
+note right: <color #red>{JAVA_HOME}/lib/ext/*.jr</color>의 class들만 로드
+
+object app_ClassLoader
+note right: <color #red>어플리케이션 classpath</color>의 class들만 로드
+
+object custom1_ClassLoader #lightblue
+note bottom: 어플리케이션 내부에서 \n신규 ClassLoader(URLClassLoader등)\n생성시 <color #red>입력한 path</color>의 class들만 로드
+
+object custom2_ClassLoader #lightblue
+note bottom: 어플리케이션 내부에서 \n신규 ClassLoader(URLClassLoader등)\n생성시 <color #red>입력한 path</color>의 class들만 로드
+
+bootstrap_ClassLoader <-- ext_ClassLoader : < 의뢰 (class를 찾을 수 없을때)
+ext_ClassLoader <-- app_ClassLoader : < 의뢰 (class를 찾을 수 없을때)
+app_ClassLoader <-- custom1_ClassLoader : < 의뢰 (class를 찾을 수 없을때)
+app_ClassLoader <-- custom2_ClassLoader : < 의뢰 (class를 찾을 수 없을때)
+
+@enduml
